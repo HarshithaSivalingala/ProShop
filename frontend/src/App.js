@@ -12,6 +12,8 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import UserListScreen from "./screens/UserListScreen";
+import UserEditScreen from "./screens/UserEditScreen";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/profile" element={<ProfileScreen />}></Route>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
+            <Route path="/admin/userlist" element={<UserListScreen />} />
+            <Route path="/admin/user/:id/edit" element={<UserEditScreen />} />
             <Route path="/cart/:id" element={<CartScreen />}></Route>
             <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/shipping" element={<ShippingScreen />}></Route>
