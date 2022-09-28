@@ -7,11 +7,14 @@ import Loader from "../components/Loader";
 import { listProducts } from "../actions/productActions";
 import { useNavigate, useParams } from "react-router-dom";
 import Paginate from "../components/Paginate";
+import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
+import ProductCarousel from "../components/ProductCarousel";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const keyword = useNavigate();
   const params = useParams();
+  const keyword = params.keyword;
   const pageNumber = params.pageNumber || 1;
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
@@ -21,6 +24,14 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Meta />
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link to="/" className="btn btn-light">
+          Go Back
+        </Link>
+      )}
       <h1>Latest Products</h1>
       {loading ? (
         <Loader />
