@@ -19,6 +19,7 @@ h2 {
 }
 
 /* carousel */
+
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
@@ -28,17 +29,21 @@ h2 {
   position: absolute;
   top: 0;
 }
-
 .carousel-caption h2 {
   color: #fff;
+  font-size: medium;
 }
 
 .carousel img {
   height: 300px;
   padding: 30px;
   margin: 40px;
+  margin-left: 55vh;
   border-radius: 50%;
 }
 .carousel a {
   margin: 0 auto;
+}
+.search {
+  display: flex;
 }
