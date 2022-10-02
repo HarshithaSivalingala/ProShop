@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Link,
+  useLocation,
   useNavigate,
   useParams,
   useSearchParams,
@@ -23,10 +24,8 @@ const CartScreen = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const productId = id;
-  const [searchParams] = useSearchParams();
-  const qty = searchParams.get("qty")
-    ? Number(searchParams.get("qty").split(":")[1])
-    : 1;
+  const { search } = useLocation();
+  const qty = search ? Number(search.split(":")[1]) : 1;
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);

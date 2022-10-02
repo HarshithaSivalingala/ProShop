@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
 const ProductEditScreen = () => {
-  const { productId } = useParams();
+  const { id: productId } = useParams();
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -136,12 +136,11 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
-                id="image-file"
+              <Form.Control
+                type="file"
                 label="Choose File"
-                custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              ></Form.Control>
               {uploading && <Loader />}
             </Form.Group>
 
